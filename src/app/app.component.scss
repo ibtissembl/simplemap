@@ -1,8 +1,15 @@
+@import '~leaflet/dist/leaflet.css';
+
+/* Styles pour la carte */
 #map {
-    height: 600px;
-  }
-  .title {
-    text-align: center;
-    margin-top: 20px; 
-  }
+  height: 600px; /* Ajustez la hauteur selon vos besoins */
+  border-style: double;
+  background-color: aqua;
+}
+
+/* Styles pour les champs du formulaire */
+h1{
+  text-align: center;
+  color: #1515d5;
   
+}

@@ -1,9 +1,30 @@
 <head><link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     </head>
-    <div id="mmp"></div>
-<h1 class="title">Bienvenue dans ma simple map</h1>
+    <h1 class="title">Welcome to my simple map</h1>
 
-<div id="map"></div>
-<button (click)="startAnimation()">Démarrer l'animation</button>
+    <div id="map"></div>
+    <button  class ="btn btn-primary" (click)="startAnimation()">Démarrer l'animation</button>
+    <div id="simplemap" (click)="showForm($event)"></div>
 
+    <div *ngIf="showMapForm">
+      <form (ngSubmit)= "submitForm()" method="post">
+        <label for="matricule">Matricule:</label>
+        <input type="text" id="matricule" name="matricule" [(ngModel)]="formdata.matricule" required>
+    
+        <label for="chauffeur">Chauffeur:</label>
+        <input type="text" id="chauffeur"  name="chauffeur" [(ngModel)]="formdata.chauffeur" required>
+    
+        <label for="couleur">Couleur:</label>
+        <input type="text" id="couleur" name="couleur" [(ngModel)]="formdata.couleur" required>
+    
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" [(ngModel)]="formdata.longitude" required>
+    
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" [(ngModel)]="formdata.latitude" required>
+    
+        <button type="submit">Save</button>
+      </form>
+    </div>
+    
